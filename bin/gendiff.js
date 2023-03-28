@@ -2,6 +2,7 @@
 
 import { program } from "commander/esm.mjs";
 import { readFileSync } from 'node:fs';
+import compare from 'src/compare.js'
 
 program
 		.description('Compares two configuration files and shows a difference.')
