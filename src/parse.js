@@ -1,6 +1,6 @@
-import { readFileSync } from 'node:fs';
-import { path } from 'node:path';
+import { readFileSync } from 'fs';
+import path from 'path';
 
-const parse = (file) => return JSON.parse(fs.readFileSync(path.resolve(file)));
+const parse = (file) => JSON.parse(readFileSync(path.resolve(file), 'utf-8'));
 
 export default parse;
