@@ -39,7 +39,7 @@ const getCompare = (obj1, obj2) => {
     if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
       return {
         key,
-        children: compare(obj1[key], obj2[key]),
+        children: getCompare(obj1[key], obj2[key]),
         type: 'object'
       };
     }

@@ -1,11 +1,12 @@
 import parse from './parse.js';
 import getCompare from './compare.js';
+import getStingifyResult from './formatter.js';
 
 const genDiff = (filepath1, filepath2) => {
   const obj1 = parse(filepath1);
   const obj2 = parse(filepath2);
-
-  return  compare(obj1, obj2);
+  const compareObj = getCompare(obj1, obj2);
+  return  getStingifyResult(compareObj);
 };
 
 
