@@ -1,4 +1,4 @@
-import _ from "lodash";
+import _ from 'lodash';
 
 const getSortedKeys = (obj1, obj2) => {
   const keys1 = _.keys(obj1);
@@ -17,7 +17,7 @@ const getCompare = (obj1, obj2) => {
         key,
         obj1: obj1[key],
         obj2: obj2[key],
-        type: "unchanged",
+        type: 'unchanged',
       };
     }
     if (!_.has(obj1, key)) {
@@ -25,7 +25,7 @@ const getCompare = (obj1, obj2) => {
         key,
         obj1: obj1[key],
         obj2: obj2[key],
-        type: "add",
+        type: 'add',
       };
     }
     if (!_.has(obj2, key)) {
@@ -33,14 +33,14 @@ const getCompare = (obj1, obj2) => {
         key,
         obj1: obj1[key],
         obj2: obj2[key],
-        type: "delete",
+        type: 'delete',
       };
     }
     if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
       return {
         key,
         children: getCompare(obj1[key], obj2[key]),
-        type: 'object'
+        type: 'object',
       };
     }
     if (!_.isEqual(obj1[key], obj2[key])) {
