@@ -9,9 +9,9 @@ const genDiff = (filepath1, filepath2) => {
   return getStingifyResult(compareObj);
 };
 
-const file1 = '../__fixtures__/file1.json';
-const file2 = '../__fixtures__/file2.json';
-
-console.log(genDiff(file1, file2));
+// const file1 = '../__fixtures__/file1.json';
+// const file2 = '../__fixtures__/file2.json';
+//
+// console.log(genDiff(file1, file2));
 
 export default genDiff;

@@ -12,14 +12,14 @@ const getSortedKeys = (obj1, obj2) => {
 const getCompare = (obj1, obj2) => {
   const keys = getSortedKeys(obj1, obj2);
   const compareObj = keys.map((key) => {
-    if (_.has(obj1, key) && obj1[key] === obj2[key]) {
-      return {
-        key,
-        obj1: obj1[key],
-        obj2: obj2[key],
-        type: 'unchanged',
-      };
-    }
+    // if (_.has(obj1, key) && obj1[key] === obj2[key]) {
+    //   return {
+    //     key,
+    //     obj1: obj1[key],
+    //     obj2: obj2[key],
+    //     type: 'unchanged',
+    //   };
+    // }
     if (!_.has(obj1, key)) {
       return {
         key,
@@ -51,12 +51,12 @@ const getCompare = (obj1, obj2) => {
         type: 'changed',
       };
     }
-    // return {
-    //   key,
-    //   obj1: obj1[key],
-    //   obj2: obj2[key],
-    //   type: 'unchanged',
-    // };
+    return {
+      key,
+      obj1: obj1[key],
+      obj2: obj2[key],
+      type: 'unchanged',
+    };
   });
 
   return compareObj;

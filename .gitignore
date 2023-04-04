@@ -1,3 +1,5 @@
 /node_modules/
 /.codesandbox/
 /.idea/
+.babelrc
+babel.config.json
