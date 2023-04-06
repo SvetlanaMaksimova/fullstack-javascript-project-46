@@ -26,3 +26,8 @@ test('testing diff of two json file', () => {
   expect(genDiff(filepath1, filepath2)).toEqual(resultDiff);
   expect(genDiff(filepathAbs1, filepathAbs2)).toEqual(resultDiff);
 });
+
+test('testing diff of two yaml file', () => {
+  expect(genDiff(filepath1, filepath2)).toEqual(resultDiff);
+  expect(genDiff(filepathAbs1, filepathAbs2)).toEqual(resultDiff);
+});
