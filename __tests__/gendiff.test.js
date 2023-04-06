@@ -4,6 +4,9 @@ import genDiff from '../src/genDiff.js';
 
 const filepath1 = '__fixtures__/file1.json';
 const filepath2 = '__fixtures__/file2.json';
+
+const filepathAbs1 = '/Users/mac/WebstormProjects/fullstack-javascript-project-46/__fixtures__/file1.json';
+const filepathAbs2 = '/Users/mac/WebstormProjects/fullstack-javascript-project-46/__fixtures__/file2.json';
 //
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = dirname(__filename);
@@ -21,4 +24,5 @@ const resultDiff = `{
 
 test('testing diff of two json file', () => {
   expect(genDiff(filepath1, filepath2)).toEqual(resultDiff);
+  expect(genDiff(filepathAbs1, filepathAbs2)).toEqual(resultDiff);
 });
