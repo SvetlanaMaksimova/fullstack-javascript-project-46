@@ -1,6 +1,6 @@
-import genDiff from '../src/genDiff.js';
 // import { fileURLToPath } from 'url';
 // import { dirname } from 'path';
+import genDiff from '../src/genDiff.js';
 
 const filepath1 = '__fixtures__/file1.json';
 const filepath2 = '__fixtures__/file2.json';
@@ -16,8 +16,14 @@ const filepathAbsYaml2 = '/Users/mac/WebstormProjects/fullstack-javascript-proje
 //
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = dirname(__filename);
-
+//
 // const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+//
+// const jsonFilepath1 = getFixturePath('file1.json');
+// const jsonFilepath2 = getFixturePath('file2.json');
+//
+// const yamlFilepath1 = getFixturePath('file1.yaml');
+// const yamlFilepath2 = getFixturePath('file2.yaml');
 
 const resultDiff = `{
   - follow: false
@@ -37,3 +43,11 @@ test('testing diff of two yaml file', () => {
   expect(genDiff(filepathYaml1, filepathYaml2)).toEqual(resultDiff);
   expect(genDiff(filepathAbsYaml1, filepathAbsYaml2)).toEqual(resultDiff);
 });
+
+// test('testing diff of two json file', () => {
+//   expect(genDiff(jsonFilepath1, jsonFilepath2)).toEqual(resultDiff);
+// });
+//
+// test('testing diff of two yaml file', () => {
+//   expect(genDiff(yamlFilepath1, yamlFilepath2)).toEqual(resultDiff);
+// });
