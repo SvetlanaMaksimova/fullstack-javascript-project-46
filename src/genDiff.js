@@ -9,8 +9,8 @@ const genDiff = (filepath1, filepath2) => {
   return getStingifyResult(compareObj);
 };
 
-// const file1 = '../__fixtures__/file1.json';
-// const file2 = '../__fixtures__/file2.json';
+// const file1 = '../__fixtures__/file1.yaml';
+// const file2 = '../__fixtures__/file2.yaml';
 //
 // console.log(genDiff(file1, file2));
 

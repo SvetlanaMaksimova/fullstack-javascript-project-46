@@ -5,7 +5,7 @@
   "type": "module",
   "main": "bin/gendiff.js",
   "scripts": {
-    "test": "jest"
+    "test": "npx -n --experimental-vm-modules jest"
   },
   "jest": {
     "transform": {

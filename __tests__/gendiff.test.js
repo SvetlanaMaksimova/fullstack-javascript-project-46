@@ -8,11 +8,11 @@ const filepath2 = '__fixtures__/file2.json';
 const filepathAbs1 = '/Users/mac/WebstormProjects/fullstack-javascript-project-46/__fixtures__/file1.json';
 const filepathAbs2 = '/Users/mac/WebstormProjects/fullstack-javascript-project-46/__fixtures__/file2.json';
 
-const filepathYaml1 = '__fixtures__/file1.json';
-const filepathYaml2 = '__fixtures__/file2.json';
+const filepathYaml1 = '__fixtures__/file1.yaml';
+const filepathYaml2 = '__fixtures__/file2.yaml';
 
-const filepathAbsYaml1 = '/Users/mac/WebstormProjects/fullstack-javascript-project-46/__fixtures__/file1.json';
-const filepathAbsYaml2 = '/Users/mac/WebstormProjects/fullstack-javascript-project-46/__fixtures__/file2.json';
+const filepathAbsYaml1 = '/Users/mac/WebstormProjects/fullstack-javascript-project-46/__fixtures__/file1.yaml';
+const filepathAbsYaml2 = '/Users/mac/WebstormProjects/fullstack-javascript-project-46/__fixtures__/file2.yaml';
 //
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = dirname(__filename);

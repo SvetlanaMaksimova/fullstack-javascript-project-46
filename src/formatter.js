@@ -1,4 +1,5 @@
 const getStingifyResult = (obj) => {
+  // eslint-disable-next-line array-callback-return,consistent-return
   const stringify = obj.map((item) => {
     if (item.type === 'unchanged') {
       return `    ${item.key}: ${item.obj1}`;
