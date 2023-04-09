@@ -3,7 +3,7 @@
   "description": "",
   "version": "1.0.0",
   "type": "module",
-  "main": "bin/gendiff.js",
+  "main": "src/genDiff.js",
   "scripts": {
     "test": "npx -n --experimental-vm-modules jest"
   },
