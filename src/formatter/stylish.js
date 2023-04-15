@@ -1,0 +1,65 @@
+import _ from 'lodash';
+
+const getIndent = (num) => '  '.repeat(num);
+
+const stringify = (item, indentCount) => {
+  if (!_.isObject(item)) {
+    return item;
+  }
+  const keys = Object.keys(item);
+
+  const result = keys.map((node) => {
+    if (_.isObject(item[node])) {
+      return `${getIndent(indentCount + 3)}${node}: ${stringify(
+        item[node],
+        indentCount + 2,
+      )}`;
+    }
+    return `${getIndent(indentCount + 3)}${node}: ${item[node]}`;
+  });
+  return `{\n${result.join('\n')}\n${getIndent(indentCount + 1)}}`;
+};
+
+const buildDiff = (ast, indentCount = 1) => {
+  const result = ast.flatMap((item) => {
+    const {
+      key, value, type, children, valueObj1, valueObj2,
+    } = item;
+    switch (type) {
+      case 'object':
+        return [
+          `${getIndent(indentCount + 1)}${key}: {`,
+          `${buildDiff(children, indentCount + 2)}\n${getIndent(
+            indentCount + 1,
+          )}}`,
+        ];
+      case 'add':
+        return `${getIndent(indentCount)}+ ${key}: ${stringify(
+          value,
+          indentCount,
+        )}`;
+      case 'delete':
+        return `${getIndent(indentCount)}- ${key}: ${stringify(
+          value,
+          indentCount,
+        )}`;
+      case 'changed':
+        return `${getIndent(indentCount)}- ${key}: ${stringify(
+          valueObj1,
+          indentCount,
+        )}\n${getIndent(indentCount)}+ ${key}: ${stringify(
+          valueObj2,
+          indentCount,
+        )}`;
+      case 'unchanged':
+        return `${getIndent(indentCount + 1)}${key}: ${stringify(value)}`;
+      default:
+        throw new Error(`Unknown type: ${type}`);
+    }
+  });
+  return result.join('\n');
+};
+
+const stylish = (ast) => `{\n${buildDiff(ast)}\n}`;
+
+export default stylish;
