@@ -1,6 +1,7 @@
 import parse from './parse.js';
 import getCompare from './compare.js';
 import getStingifyResult from './formatter/stylish.js';
+import getPlainResult from './formatter/plain.js'
 
 const genDiff = (filepath1, filepath2, format = 'stylish') => {
   const obj1 = parse(filepath1);
@@ -10,6 +11,8 @@ const genDiff = (filepath1, filepath2, format = 'stylish') => {
   switch (format) {
     case 'stylish':
       return getStingifyResult(compareObj);
+    case 'plain':
+      return getPlainResult(compareObj);
   }
 };
 
