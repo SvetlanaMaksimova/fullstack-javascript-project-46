@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/code",
-  "description": "",
+  "description": "Cli utility for determining the difference between two json or yaml(yml) files",
   "version": "1.0.0",
   "type": "module",
   "main": "src/genDiff.js",
