@@ -2,5 +2,4 @@
 /.codesandbox/
 /.idea/
 /coverage/
-.babelrc
-babel.config.json
+
