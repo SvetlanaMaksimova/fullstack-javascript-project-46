@@ -3,16 +3,18 @@ import path from 'path';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import yaml from 'js-yaml';
 
-const parse = (filePath) => {
-  const formatFile = path.extname(filePath);
-  if (formatFile === '.json') {
-    return JSON.parse(readFileSync(path.resolve(filePath), 'utf-8'));
+const parse = (data, fileExtension) => {
+  // const formatFile = path.extname(filePath);
+  switch (fileExtension) {
+    case '.json':
+      return JSON.parse(data);
+    case '.yml':
+      return yaml.load(data);
+    case '.yaml':
+      return yaml.load(data);
+    default:
+      throw new Error(`Unknown file type: ${fileExtension}`);
   }
-  // eslint-disable-next-line no-constant-condition
-  if (formatFile === '.yml' || '.yaml') {
-    return yaml.load(readFileSync(path.resolve(filePath), 'utf-8'));
-  }
-  throw new Error(`Unknown file type: ${formatFile}`);
 };
 
 export default parse;
