@@ -1,6 +1,3 @@
-import { readFileSync } from 'fs';
-import path from 'path';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import yaml from 'js-yaml';
 
 const parse = (data, fileExtension) => {
