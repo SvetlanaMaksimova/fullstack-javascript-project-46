@@ -22,7 +22,7 @@ make install
 make link
 ```
 
-###The utility works with three formats: json, yaml, yml.
+### The utility works with three formats: json, yaml, yml.
 
 The utility accepts an absolute or relative path to the file.
 
