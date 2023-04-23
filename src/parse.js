@@ -1,7 +1,6 @@
 import yaml from 'js-yaml';
 
 const parse = (data, fileExtension) => {
-  // const formatFile = path.extname(filePath);
   switch (fileExtension) {
     case '.json':
       return JSON.parse(data);
